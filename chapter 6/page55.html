@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>v-model示例（基本用法）</title>
+		<style type="text/css">
+			
+		</style>
+	</head>
+	<body>
+		<div id="app">
+			<input type="text" v-model="message" placeholder="输入...">
+			<p>输入的内容是：{{message}}</p>
+			<input type="text" @input="hanleInput" placeholder="输入...">
+			<p>输入的内容是：{{input}}</p>
+			<textarea v-model="text" placeholder="输入文本..."></textarea>
+			<p>输入的文本是：{{text}}</p>
+			<input type="radio" v-model="picked" value="html" id="html">
+			<label for="html">Html</label>
+			<input type="radio" v-model="picked" value="js" id="js">
+			<label for="js">Javascript</label>
+			<input type="radio" v-model="picked" value="css" id="css">
+			<label for="css">CSS</label>
+			<p>选择的项是：{{picked}}</p>
+			<input type="checkbox" v-model="check" value="qq" id="qq">
+			<label for="qq">QQ</label>
+			<input type="checkbox" v-model="check" value="wechat" id="wechat">
+			<label for="wechat">微信</label>
+			<input type="checkbox" v-model="check" value="call" id="call">
+			<label for="call">电话</label>
+			<p>选择的项是：{{check}}</p>
+			
+		</div>
+		<script type="text/javascript" src="https://vuejs.org/js/vue.js"></script>
+		<script type="text/javascript">
+			var app=new Vue({
+				el:"#app",
+				data:{
+					message:'',
+					text:'示例文本',
+					input:'',
+					picked:'js',
+					check:['qq','call']
+				},
+				methods:{
+					hanleInput:function(e){
+							this.input=e.target.value;
+					}
+				}
+			});
+		</script>
+	</body>
+</html>

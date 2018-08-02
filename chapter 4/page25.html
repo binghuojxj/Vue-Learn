@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Vue示例</title>
+	</head>
+	<body>
+		<div id="app">
+			<a :href="url">链接</a>
+			<img :src="imgUrl">
+		</div>
+		<script type="text/javascript" src="https://vuejs.org/js/vue.js"></script>
+		<script type="text/javascript">
+			new Vue({
+				el:'#app',
+				data:{
+					url:'https://www.baidu.com',
+					imgUrl:'https://avatars0.githubusercontent.com/u/8280092?s=40&v=4'
+				}
+			});
+		</script>
+	</body>
+</html>
